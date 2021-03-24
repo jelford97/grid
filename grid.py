@@ -43,7 +43,7 @@ class Cell:
             raise ValueError("The x position must be between 0 and %s!" % (w - 1))
 
         if y < 0 or y >= h:
-            raise ValueError("The y position must be between 0 and %s!" % (h - 1))
+            raise ValueError("The y position must be between 0 and %s!" % (h-1))
 
         # Set the position of the cell in the grid.
         self._x = x
@@ -153,7 +153,7 @@ class Cell:
             self._neighbours += 1
 
         # Cell isn't on top edge.
-        if self._y < w:
+        if self._y < h-1:
             self._neighbour_list[3] = self._y + 1
             self._neighbours += 1
 
